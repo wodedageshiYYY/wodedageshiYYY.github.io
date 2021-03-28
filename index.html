@@ -1,89 +1,183 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	<link rel="stylesheet" href="timeline.css">
-	</head>
-	
-	<body>
-		<h1>Simple Responsive Vertical Timeline Layout</h1>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
 <div class="timeline">
-  
-  <h2 class="timeline__item timeline__item--year">1985</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Born</h3>
+  <div class="container left">
+    <div class="content">
+      <h2>2017</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <h2 class="timeline__item timeline__item--year">2003</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Graduated High School</h3>
+  <div class="container right">
+    <div class="content">
+      <h2>2016</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <h2 class="timeline__item timeline__item--year">2004</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Started at Fox Valley Technical College (FVTC) in an Electrical Engineering program</h3>
+  <div class="container left">
+    <div class="content">
+      <h2>2015</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <h2 class="timeline__item timeline__item--year">2006</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Changed at FVTC to Web Design & Development program</h3>
+  <div class="container right">
+    <div class="content">
+      <h2>2012</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <h2 class="timeline__item timeline__item--year">2007</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Web Design Internship</h3>
-    <p class="timeline__blurb">started internship at company 1.</p>
+  <div class="container left">
+    <div class="content">
+      <h2>2011</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <h2 class="timeline__item timeline__item--year">2008</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">IT Internship</h3>
-    <p class="timeline__blurb">Started internship at company 2</p>
+  <div class="container right">
+    <div class="content">
+      <h2>2007</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
   </div>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Got Married</h3>
-  </div>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Application Engineer</h3>
-    <p class="timeline__blurb">Started web design/dev job at company 2.</p>
-  </div>
-  
-  <h2 class="timeline__item timeline__item--year">2012</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">First Child</h3>
-    <p class="timeline__blurb">Spouse and I welcomed our first daughter.</p>
-  </div>
-  
-  <h2 class="timeline__item timeline__item--year">2015</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Second Child</h3>
-    <p class="timeline__blurb">Spouse and I welcomed our second daughter.</p>
-  </div>
-  
-  <h2 class="timeline__item timeline__item--year">2016</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Lead Application Engineer</h3>
-    <p class="timeline__blurb">Promotion to mid-level role.</p>
-  </div>
-  
-  <h2 class="timeline__item timeline__item--year">2018</h2>
-  
-  <div class="timeline__item">
-    <h3 class="timeline__title">Aerial/Circus Arts</h3>
-    <p class="timeline__blurb">Started taking classes to learn aerial silks, hoop, and hammock.</p>
-  </div>
-  
-  <h2 class="timeline__item timeline__item--year">2019</h2>
-  
 </div>
-	</body>
+
+</body>
 </html>
