@@ -295,10 +295,11 @@ body {
  
 <script type="text/javascript">
 function showtime(){
-// 获取系统现在时间
+
 var date = new Date();
 
-var lastdate = "2021-04-01 21:00"
+//修改最後見面時間
+var lastdate = "2021-04-07 22:00"
 
 var date3 = date - new Date(lastdate).getTime()
 
@@ -309,10 +310,10 @@ var leave2 = leave1 % (3600 * 1000);
 var minutes = Math.floor(leave2 / (60 * 1000));
 var leave3 = leave2 % (60 * 1000);
 var seconds = Math.round(leave3 / 1000);
-document.getElementById("show").textContent = "和大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"沒有相見 QAQ";
+document.getElementById("show").textContent = "和大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"沒有相見！";
 showtime();
 }
-// 设置1秒定时以刷新时间
+
 setInterval(showtime,1000);
 </script>
   
@@ -339,7 +340,18 @@ setInterval(showtime,1000);
   </div>
 
   -->
-
+  <div class="container left">
+    <div class="content">
+      <h2>2021/04/07</h2>
+      <p>荃灣《愉景新城》, 《一鍋堂》, 《賽馬會德華公園》</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2021/04/03-04/05</h2>
+      <p>葵涌，蹭來的機會，接你下班。。</p>
+    </div>
+  </div>
   <div class="container left">
     <div class="content">
       <h2>2021/04/01</h2>
