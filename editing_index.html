@@ -294,12 +294,33 @@ body {
 
  
 <script type="text/javascript">
+
+function showtime2(){
+
+var date = new Date();
+
+//第一次認識
+var firstdate = "2021-01-16 23:58"
+
+var date3 = date - new Date(firstdate).getTime()
+
+var days = Math.floor(date3 / (24 * 3600 * 1000));
+var leave1 = date3 % (24 * 3600 * 1000);
+var hours = Math.floor(leave1 / (3600 * 1000));
+var leave2 = leave1 % (3600 * 1000);
+var minutes = Math.floor(leave2 / (60 * 1000));
+var leave3 = leave2 % (60 * 1000);
+var seconds = Math.round(leave3 / 1000);
+document.getElementById("show1").textContent = "認識大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒";
+showtime2();
+}
+
 function showtime(){
 
 var date = new Date();
 
 //修改最後見面時間
-var lastdate = "2021-04-07 22:00"
+var lastdate = "2021-04-16 17:00"
 
 var date3 = date - new Date(lastdate).getTime()
 
@@ -310,15 +331,17 @@ var leave2 = leave1 % (3600 * 1000);
 var minutes = Math.floor(leave2 / (60 * 1000));
 var leave3 = leave2 % (60 * 1000);
 var seconds = Math.round(leave3 / 1000);
-document.getElementById("show").textContent = "和大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"沒有相見！";
+document.getElementById("show2").textContent = "和大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"沒有相見！";
 showtime();
 }
 
 setInterval(showtime,1000);
+setInterval(showtime2,1000);
 </script>
   
 <h1 style="color:white;"><center><span style="border: 3px solid wheat">與大哥YYY的足跡</span></center></h1>
-<div id="show" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0;font-weight:bold">Loading...</div>
+<div id="show1" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0;font-weight:bold">Loading...</div>
+<div id="show2" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0">Loading...</div>
 <marquee><h2 style="color:lightblue;">祝大哥每天健康, 每天開心, 要想我~</h2></marquee>
  
 <div class="timeline">
@@ -340,6 +363,18 @@ setInterval(showtime,1000);
   </div>
 
   -->
+   <div class="container left">
+    <div class="content">
+      <h2>TBC</h2>
+      <p>TBC</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2021/04/15 - 2021/04/16</h2>
+      <p>元朗, 屯門到處走。。天水圍《譚仔米綫》, 《八方雲集》</p>
+    </div>
+  </div>
   <div class="container left">
     <div class="content">
       <h2>2021/04/07</h2>
