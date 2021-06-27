@@ -319,8 +319,8 @@ function showtime(){
 
 var date = new Date();
 
-//修改最後見面時間
-var lastdate = "2021-06-14 20:00"
+//開始date
+var lastdate = "2021-06-26 22:30"
 
 var date3 = date - new Date(lastdate).getTime()
 
@@ -331,7 +331,7 @@ var leave2 = leave1 % (3600 * 1000);
 var minutes = Math.floor(leave2 / (60 * 1000));
 var leave3 = leave2 % (60 * 1000);
 var seconds = Math.round(leave3 / 1000);
-document.getElementById("show2").textContent = "和大哥已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"沒有相見！";
+document.getElementById("show2").textContent = "和大哥相親相愛已經有"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+"了！";
 showtime();
 }
 
@@ -340,8 +340,8 @@ setInterval(showtime2,1000);
 </script>
   
 <h1 style="color:white;"><center><span style="border: 3px solid wheat">與大哥YYY的足跡</span></center></h1>
-<div id="show1" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0;font-weight:bold">Loading...</div>
-<div id="show2" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0">Loading...</div>
+<div id="show1" style="text-align:center;font-size:25px;color:rgb(66, 127, 218);padding:10px 0;">Loading...</div>
+<div id="show2" style="text-align:center;font-size:25px;color:rgb(250, 0, 0);padding:10px 0; font-weight:bold">Loading...</div>
 <marquee><h2 style="color:lightblue;">祝大哥每天健康, 每天開心, 要想我~</h2></marquee>
  
 <div class="timeline">
@@ -365,8 +365,20 @@ setInterval(showtime2,1000);
   -->
   <div class="container left">
     <div class="content">
+      <h2>TBC</h2>
+      <p>TBC</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2021/06/26 - 2021/06/27</h2>
+      <p>油麻地《逸東酒店》， 旺角《韓牛韓式燒烤》， 尖沙咀《渝味曉宇重慶老火鍋》</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
       <h2>2021/06/20</h2>
-      <p>天水圍天暉體育館打科興疫苗</p>
+      <p>天水圍天暉體育館打科興疫苗，沒打成 改期。 天水圍天一商場《魚你一起》</p>
     </div>
   </div>
   <div class="container right">
